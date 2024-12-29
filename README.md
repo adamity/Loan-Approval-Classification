@@ -63,6 +63,7 @@ Download the dataset from [this link](<https://www.kaggle.com/datasets/taweilo/l
     ```
 
 5. **PyCaret Implementation**:
+    This is an alternative to the above steps. It uses PyCaret to automate the entire process.
 
     ```sh
     python src/pycaret_pipeline.py
