@@ -4,6 +4,7 @@ from utils import *
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
+from lightgbm import LGBMClassifier
 from sklearn import metrics
 
 
@@ -62,11 +63,20 @@ def main():
     print("\033[34mSupport Vector Machine Classifier (Poly Kernel)\033[0m\n")
     evaluate_model(y_test, y_pred)
 
+    # LIGHTGBM Classifier
+    lgbm = LGBMClassifier()
+    lgbm.fit(x_train, y_train)
+    y_pred = lgbm.predict(x_test)
+
+    print("\033[34mLightGBM Classifier\033[0m\n")
+    evaluate_model(y_test, y_pred)
+
     # Save Models
     save_model(rfc, 'models/RandomForestClassifier.pkl')
     save_model(svc_linear, 'models/SVC_Linear.pkl')
     save_model(svc_rbf, 'models/SVC_RBF.pkl')
     save_model(svc_poly, 'models/SVC_Poly.pkl')
+    save_model(lgbm, 'models/LightGBMClassifier.pkl')
 
 
 if __name__ == "__main__":
