@@ -62,6 +62,12 @@ Download the dataset from [this link](<https://www.kaggle.com/datasets/taweilo/l
     python src/04_training.py
     ```
 
+5. **PyCaret Implementation**:
+
+    ```sh
+    python src/pycaret_pipeline.py
+    ```
+
 ## License
 
 This project is licensed under the MIT License.
