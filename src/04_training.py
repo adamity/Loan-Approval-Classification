@@ -65,6 +65,7 @@ def main():
 
     # LIGHTGBM Classifier
     lgbm = LGBMClassifier()
+    x_train.columns = x_train.columns.str.replace(' ', '_')
     lgbm.fit(x_train, y_train)
     y_pred = lgbm.predict(x_test)
 
